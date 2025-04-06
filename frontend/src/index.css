@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+/* Remove os spinners dos inputs type="number" */
+.hidden-spinner {
+    appearance: textfield;
+}
+
+/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+.hidden-spinner::-webkit-outer-spin-button,
+.hidden-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+.hidden-spinner {
+    -moz-appearance: textfield;
+}
+
+.hidden-arrow {
+    appearance: none; /* Para a maioria dos navegadores */
+    -webkit-appearance: none; /* Para Chrome/Safari */
+    -moz-appearance: none; /* Para Firefox */
+    background-image: none !important; /* Remove possíveis ícones nativos */
+  }
+  
