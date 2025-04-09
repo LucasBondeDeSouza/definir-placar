@@ -33,7 +33,7 @@ export default ({ data, scores, updateScore, round }) => {
         };
 
         try {
-            await axios.put('http://localhost:5000/api/matches', payload);
+            await axios.put('https://definir-placar.vercel.app/api/matches', payload);
         } catch (error) {
             console.error("Erro ao aplicar placar:", error);
         }
