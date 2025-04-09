@@ -8,13 +8,20 @@ const PORT = 5000
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/teams', async (req, res) => {
+app.put('/api/matches', async (req, res) => {
+    const {round, home_team_id, away_team_id, home_score, away_score} = req.body
+    
     try {
-        const results = await db.query('SELECT id, name FROM teams');
-        res.json(results.rows);
+        await db.query(
+            `UPDATE matches
+            SET home_score = $1, away_score = $2
+            WHERE home_team_id = $3 AND away_team_id = $4 AND round = $5`,
+            [home_score, away_score, home_team_id, away_team_id, round]
+        )
+        res.status(200).json({ message: "Placar atualizado com sucesso." });
     } catch (err) {
-        console.error(err)
-        res.status(500).json({ error: 'Erro ao buscar os dados' });
+        console.error("Erro ao atualizar placar:", err);
+        res.status(500).json({ error: "Erro ao atualizar placar." });
     }
 })
 
