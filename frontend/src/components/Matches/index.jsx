@@ -42,7 +42,7 @@ export default ({ data, scores, updateScore, round }) => {
     const renderMatches = (matches) => (
         matches.map((match, index) => (
             <div key={index}>
-                <div className="flex justify-between items-center py-2 px-10 md:px-5 hover:bg-neutral-50 cursor-pointer transition duration-500">
+                <div className="flex justify-between items-center py-2 px-5 hover:bg-neutral-50 cursor-pointer transition duration-500">
                     <div className="w-20 flex items-center justify-between gap-2">
                         <img
                             className="h-10"
