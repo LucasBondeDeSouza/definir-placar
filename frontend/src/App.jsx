@@ -5,7 +5,7 @@ import Round from "./components/Round";
 
 export default () => {
   const [data, setData] = useState([]);
-  const [round, setRound] = useState(24)
+  const [round, setRound] = useState(25)
   const [scores, setScores] = useState({});
 
   const fetchMatches = async () => {
